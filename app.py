@@ -44,7 +44,6 @@ def store_conversation(question, answer):
     )
     return len(chunks)
 
-st.title("EchoAI")
 
 st.set_page_config(
     page_title="EchoAI",
@@ -58,7 +57,7 @@ st.html("""
   .stApp {
     background-image:
       linear-gradient(rgba(16,19,26,.90), rgba(16,19,26,.90)),
-      url("file:///C:/Users/Jerem/Downloads/geert-pieters-8QrPJ3Kfie4-unsplash.jpg");
+      url("https://unsplash.com/photos/8QrPJ3Kfie4");
     background-size: cover;
     background-attachment: fixed;
   }
@@ -71,7 +70,7 @@ st.html("""
 """)
 
 # ---------- 3. a logo pinned top left ----------
-st.logo("logo.png", size="large")
+st.logo("🎶", size="large")
 
 # ---------- 4. a header row instead of a stacked title ----------
 crest, heading = st.columns([1, 6])

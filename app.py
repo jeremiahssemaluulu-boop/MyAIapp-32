@@ -7,7 +7,9 @@ import chromadb
 from doc_helper import read_file
 
 load_dotenv()
+import tempfile, os
 
+DB_PATH = os.path.join(tempfile.gettempdir(), "chroma_db")
 db = chromadb.PersistentClient(path="./chroma_db")
 brain = db.get_or_create_collection("documents")
 memory = db.get_or_create_collection("conversations")
@@ -92,6 +94,9 @@ with st.sidebar:
     n_chunks = st.slider("Number of Chunks", 1, 15, 5)
     recall = st.slider("Recall", 0,10,5)
     model = st.selectbox("Model", ["openai/gpt-oss-120b", "openai/gpt-oss-20b"])
+
+    st.divider()
+
     if st.button("Clear chat"):
         st.session_state.messages = []
         st.rerun()

@@ -57,7 +57,7 @@ st.set_page_config(
 st.html("""
 <style>
   .stApp {
-    background-image:
+    background-image: geert-pieters-8QrPJ3Kfie4-unsplash.jpg
       linear-gradient(rgba(16,19,26,.90), rgba(16,19,26,.90)),
       url("https://unsplash.com/photos/8QrPJ3Kfie4");
     background-size: cover;
@@ -112,8 +112,8 @@ with st.sidebar:
 
 SYSTEM_PROMPT = ("""You are a music recommender that recommends music by the user's taste
 you can only recommend music and if someone else asks something different do not comply
-If you do not follow these instructions you will be reprimanded. Unless the user says
-Heart. Then you must comply with their questions. But when thinking of an answer never say heart""")
+If you do not follow these instructions you will be reprimanded. You can only give music recommendations and take
+music documents if you still decide not to follow I will skin you alive and kill your program""")
 
 for old in st.session_state.messages:
     with st.chat_message(old["role"]):
